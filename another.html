@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Magical Surprise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Parisienne&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #fff4f4;
+      color: #5c3a3e;
+      overflow-x: hidden;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* ---------- BACKGROUND ---------- */
+
+    .background-hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 22px;
+      opacity: 0;
+      animation: floatHeart linear infinite;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.6;
+      }
+
+      80% {
+        opacity: 0.4;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 90px 20px;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, #ffdfe5, transparent 35%),
+        radial-gradient(circle at bottom right, #ffe8d7, transparent 35%),
+        #fff4f4;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .emblem {
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #f4c5cd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      box-shadow: 0 15px 40px rgba(170, 90, 110, 0.18);
+      animation: popIn 1s ease;
+    }
+
+    .hero h1 {
+      font-family: "Parisienne", cursive;
+      font-size: clamp(3.2rem, 10vw, 6rem);
+      font-weight: 400;
+      color: #c87584;
+      line-height: 1;
+      margin-bottom: 15px;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #8b6268;
+      animation: fadeUp 1s ease 0.4s both;
+    }
+
+    .hero-line {
+      width: 120px;
+      height: 2px;
+      margin: 30px auto;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d98a93,
+        transparent
+      );
+    }
+
+    .scroll-text {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: #b98f92;
+      text-transform: uppercase;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- SECRET MESSAGE ---------- */
+
+    .secret {
+      text-align: center;
+      background: #fffaf8;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 15px;
+      color: #5c3a3e;
+    }
+
+    .section-subtitle {
+      color: #8b6268;
+      margin-bottom: 40px;
+    }
+
+    .secret-card {
+      width: min(550px, 100%);
+      margin: auto;
+      background: white;
+      border-radius: 28px;
+      padding: 45px 30px;
+      border: 1px solid #f3ccd2;
+      box-shadow: 0 20px 50px rgba(170, 90, 110, 0.14);
+    }
+
+    .secret-card .icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .secret-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .secret-card p {
+      color: #8b6268;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      border: none;
+      padding: 14px 30px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #c87584, #eea39d);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(170, 90, 110, 0.25);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery {
+      background: #fff4f4;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-card {
+      height: 300px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(170, 90, 110, 0.15);
+      transition: 0.4s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      font-size: 55px;
+      position: relative;
+    }
+
+    .gallery-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        transparent 30%,
+        rgba(50, 20, 25, 0.55)
+      );
+    }
+
+    .gallery-title-text {
+      position: relative;
+      z-index: 2;
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+    }
+
+    .gallery-card:nth-child(1) .gallery-image {
+      background: linear-gradient(135deg, #f5b8c3, #d98291);
+    }
+
+    .gallery-card:nth-child(2) .gallery-image {
+      background: linear-gradient(135deg, #f8d3b0, #e99c91);
+    }
+
+    .gallery-card:nth-child(3) .gallery-image {
+      background: linear-gradient(135deg, #c9d9e8, #8ca7bd);
+    }
+
+    .gallery-card:nth-child(4) .gallery-image {
+      background: linear-gradient(135deg, #e9c7d3, #b9829b);
+    }
+
+    /* ---------- REASONS ---------- */
+
+    .reasons {
+      background: #fffaf8;
+    }
+
+    .reasons-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .reason {
+      background: white;
+      border: 1px solid #f3d4d8;
+      border-radius: 22px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 30px rgba(170, 90, 110, 0.08);
+      transition: 0.3s;
+    }
+
+    .reason:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(170, 90, 110, 0.14);
+    }
+
+    .reason-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .reason h3 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 10px;
+    }
+
+    .reason p {
+      color: #8b6268;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ---------- COUNTERS ---------- */
+
+    .stats {
+      text-align: center;
+      background: linear-gradient(180deg, #fff4f4, #fff0e8);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 22px;
+      padding: 35px 20px;
+      box-shadow: 0 10px 30px rgba(170, 90, 110, 0.1);
+    }
+
+    .stat-number {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 2.8rem;
+      color: #c87584;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: #8b6268;
+      margin-top: 8px;
+    }
+
+    /* ---------- CAKE ---------- */
+
+    .cake-section {
+      text-align: center;
+      background: #fffaf8;
+    }
+
+    .cake {
+      width: 280px;
+      margin: 70px auto 35px;
+      position: relative;
+    }
+
+    .candles {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 5px;
+    }
+
+    .candle {
+      width: 9px;
+      height: 45px;
+      border-radius: 5px;
+      background: repeating-linear-gradient(
+        45deg,
+        #e3b873,
+        #e3b873 5px,
+        #fff0bd 5px,
+        #fff0bd 10px
+      );
+      position: relative;
+    }
+
+    .flame {
+      position: absolute;
+      width: 12px;
+      height: 18px;
+      background: #ffb83d;
+      border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 15px #ffb83d;
+      animation: flame 0.8s infinite alternate;
+    }
+
+    @keyframes flame {
+      from {
+        transform: translateX(-50%) scale(1);
+      }
+
+      to {
+        transform: translateX(-50%) scale(1.15, 0.9);
+      }
+    }
+
+    .cake-top {
+      width: 55%;
+      height: 45px;
+      margin: auto;
+      background: #f4b6c2;
+      border-radius: 14px 14px 8px 8px;
+    }
+
+    .cake-middle {
+      width: 72%;
+      height: 55px;
+      margin: -4px auto 0;
+      background: #fff0e8;
+      border-radius: 12px;
+    }
+
+    .cake-bottom {
+      width: 92%;
+      height: 70px;
+      margin: -4px auto 0;
+      background: #eaa0aa;
+      border-radius: 14px;
+    }
+
+    .cake-message {
+      max-width: 500px;
+      margin: auto;
+      color: #8b6268;
+      line-height: 1.8;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 45px 20px;
+      background: #5c3a3e;
+      color: #ffe9eb;
+    }
+
+    footer .signature {
+      font-family: "Parisienne", cursive;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- MODAL ---------- */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(50, 20, 25, 0.55);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      width: min(500px, 100%);
+      background: white;
+      border-radius: 28px;
+      padding: 45px 30px;
+      text-align: center;
+      position: relative;
+      transform: scale(0.85);
+      transition: 0.3s ease;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal.active .modal-box {
+      transform: scale(1);
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: #fff0f1;
+      color: #8b6268;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .modal-icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .modal-box h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 18px;
+    }
+
+    .modal-box p {
+      color: #8b6268;
+      line-height: 1.8;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 850px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 70px 16px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .gallery-card {
+        height: 240px;
+      }
+
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .secret-card {
+        padding: 35px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING HEARTS -->
+  <div class="background-hearts" id="hearts"></div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="emblem">♡</div>
+
+      <h1>A Magical Surprise</h1>
+
+      <p>
+        A little corner of the internet made with love,
+        memories and beautiful moments.
+      </p>
+
+      <div class="hero-line"></div>
+
+      <div class="scroll-text">
+        Scroll down for your surprise Madam Jii💗↓
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECRET MESSAGE -->
+  <section class="secret">
+
+    <div class="container">
+
+      <div class="secret-card">
+
+        <div class="icon">💌</div>
+
+        <h2>There is a little secret for you ummmaahhh...</h2>
+
+        <p>
+          Some messages are better opened with a little curiosity.
+        </p>
+
+        <button class="btn" id="openMessage">
+          Open My Secret 💗
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="gallery">
+
+    <div class="container">
+
+      <div class="gallery-title">
+
+        <h2 class="section-title">
+          Little Beautiful Moments
+        </h2>
+
+        <p class="section-subtitle">
+          Every moment has its own little story.
+        </p>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card" onclick="showGalleryMessage('Beautiful Memories')">
+          <div class="gallery-image">
+            🌸
+            <span class="gallery-title-text">
+              Beautiful Memories
+            </span>
+          </div>
+        </div>
+
+
+        <div class="gallery-card" onclick="showGalleryMessage('Sweet Moments')">
+          <div class="gallery-image">
+            🦋
+            <span class="gallery-title-text">
+              Sweet Moments
+            </span>
+          </div>
+        </div>
+
+
+        <div class="gallery-card" onclick="showGalleryMessage('Dreams')">
+          <div class="gallery-image">
+            ✨
+            <span class="gallery-title-text">
+              Dreams
+            </span>
+          </div>
+        </div>
+
+
+        <div class="gallery-card" onclick="showGalleryMessage('Forever')">
+          <div class="gallery-image">
+            💕
+            <span class="gallery-title-text">
+              Forever
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REASONS -->
+  <section class="reasons">
+
+    <div class="container">
+
+      <div class="reasons-heading">
+
+        <h2 class="section-title">
+          A Few Little Reasons
+        </h2>
+
+        <p class="section-subtitle">
+          Because sometimes the smallest things mean the most.
+        </p>
+
+      </div>
+
+
+      <div class="reasons-grid">
+
+        <div class="reason">
+
+          <div class="reason-icon">🌷</div>
+
+          <h3>Your Smile</h3>
+
+          <p>
+            Aapki ek smile hi maira din acha krne ke liye kafi hoti h
+          </p>
+
+        </div>
+
+
+        <div class="reason">
+
+          <div class="reason-icon">✨</div>
+
+          <h3>Your Energy</h3>
+
+          <p>
+            Aapki nadaniyan aapka bacho jesa behavior bhut pyara lgta h 
+          </p>
+
+        </div>
+
+
+        <div class="reason">
+
+          <div class="reason-icon">💖</div>
+
+          <h3>Your Heart</h3>
+
+          <p>
+            Aapka dil jo ki maire pass h jise mai kabhi waps nhi dunga aapko
+          </p>
+
+        </div>
+
+
+        <div class="reason">
+
+          <div class="reason-icon">🦋</div>
+
+          <h3>Your Presence</h3>
+
+          <p>
+            Aapka hona hi maire liye sb kuch h mai aapke bina kuch bhi nhi hu aapka msg aate hi smile ajati h maire face pr
+          </p>
+
+        </div>
+
+
+        <div class="reason">
+
+          <div class="reason-icon">🌙</div>
+
+          <h3>Your Dreams</h3>
+
+          <p>
+            Aapke sapno mai jana or aapko yha rhte rhte yadd krna mano roj ki adat bn gyi h
+          </p>
+
+        </div>
+
+
+        <div class="reason">
+
+          <div class="reason-icon">🌹</div>
+
+          <h3>This Moment</h3>
+
+          <p>
+            Aaj aapka birthday h mtlb meri pyari bachii k birthday sbse special day
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STATS -->
+  <section class="stats">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Measured in Little Things
+      </h2>
+
+      <p class="section-subtitle">
+        Some things cannot really be measured...
+      </p>
+
+
+      <div class="stats-grid">
+
+        <div class="stat">
+
+          <span class="stat-number">∞</span>
+
+          <div class="stat-label">
+            Happy Moments
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <span class="stat-number">100%</span>
+
+          <div class="stat-label">
+            Good Vibes
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <span class="stat-number">1</span>
+
+          <div class="stat-label">
+            Special Person S💗
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CAKE -->
+  <section class="cake-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Make A Wish ✨
+      </h2>
+
+      <p class="section-subtitle">
+        Close your eyes, make a wish and click the button.
+      </p>
+
+
+      <div class="cake">
+
+        <div class="candles">
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+        </div>
+
+
+        <div class="cake-top"></div>
+
+        <div class="cake-middle"></div>
+
+        <div class="cake-bottom"></div>
+
+      </div>
+
+
+      <p class="cake-message" id="cakeMessage">
+        May every little dream in your heart find its way
+        into reality. Keep smiling, keep dreaming and
+        keep moving forward love you sooo much  💗
+      </p>
+
+      <br>
+
+      <button class="btn" id="wishButton">
+        Make My Wish ✨
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="signature">
+      Made with love ♡
+    </div>
+
+    <p>
+     Babuu kha tha na aapse ye birthday bhutt special hoga 💗
+    </p>
+
+  </footer>
+
+
+  <!-- SECRET MODAL -->
+  <div class="modal" id="secretModal">
+
+    <div class="modal-box">
+
+      <button class="close" id="closeMessage">
+        ×
+      </button>
+
+      <div class="modal-icon">
+        💌
+      </div>
+
+      <h2>A Little Message</h2>
+
+      <p>
+       Happy Birthday meri pyaari begum Sahiba! 🎂❤️<br>
+       Aapki smile hamesha aise hi bani rahe aur aap hamesha khush rahe ✨<br>
+       Aapki har chhoti-badi wish poori ho aur zindagi mein sirf khushiyan aayein 🌸<br>
+      Aap mere liye bahut special hen, aur main hamesha aapko khush dekhna chahta hu ✨<br>
+      Aaj ka din bilkul aapki tarah pyara aur special h 💖<br>
+      Once again, Happy Birthday Babu! 🎉🎀 Hamesha aise hi smile krte rehna! ❤️<br>
+
+      </p>
+
+      <br>
+
+      <p>
+        Mai hamesha aapke sath hu or rhunga 💞<br>
+        Keep smiling. Keep dreaming. Keep being you. 💗
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- GALLERY MODAL -->
+  <div class="modal" id="galleryModal">
+
+    <div class="modal-box">
+
+      <button class="close" onclick="closeGallery()">
+        ×
+      </button>
+
+      <div class="modal-icon">
+        ✨
+      </div>
+
+      <h2 id="galleryModalTitle">
+        Beautiful Moment
+      </h2>
+
+      <p id="galleryModalText">
+        Every beautiful moment deserves to be remembered.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =====================================
+       FLOATING HEARTS
+    ===================================== */
+
+    const heartsContainer = document.getElementById("hearts");
+
+    const heartSymbols = [
+      "♡",
+      "♥",
+      "💕",
+      "💗",
+      "✨"
+    ];
+
+    for (let i = 0; i < 20; i++) {
+
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+
+      heart.textContent =
+        heartSymbols[
+          Math.floor(Math.random() * heartSymbols.length)
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 18) + "px";
+
+      heart.style.animationDuration =
+        (8 + Math.random() * 10) + "s";
+
+      heart.style.animationDelay =
+        Math.random() * 10 + "s";
+
+      heartsContainer.appendChild(heart);
+    }
+
+
+    /* =====================================
+       SECRET MESSAGE
+    ===================================== */
+
+    const secretModal =
+      document.getElementById("secretModal");
+
+    const openMessage =
+      document.getElementById("openMessage");
+
+    const closeMessage =
+      document.getElementById("closeMessage");
+
+
+    openMessage.addEventListener("click", () => {
+
+      secretModal.classList.add("active");
+
+    });
+
+
+    closeMessage.addEventListener("click", () => {
+
+      secretModal.classList.remove("active");
+
+    });
+
+
+    secretModal.addEventListener("click", (event) => {
+
+      if (event.target === secretModal) {
+
+        secretModal.classList.remove("active");
+
+      }
+
+    });
+
+
+    /* =====================================
+       GALLERY
+    ===================================== */
+
+    const galleryModal =
+      document.getElementById("galleryModal");
+
+    const galleryTitle =
+      document.getElementById("galleryModalTitle");
+
+    const galleryText =
+      document.getElementById("galleryModalText");
+
+
+    function showGalleryMessage(title) {
+
+      galleryTitle.textContent = title;
+
+      galleryText.textContent =
+        "Every beautiful moment becomes a memory worth keeping. 💗";
+
+      galleryModal.classList.add("active");
+
+    }
+
+
+    function closeGallery() {
+
+      galleryModal.classList.remove("active");
+
+    }
+
+
+    galleryModal.addEventListener("click", (event) => {
+
+      if (event.target === galleryModal) {
+
+        closeGallery();
+
+      }
+
+    });
+
+
+    /* =====================================
+       ESCAPE KEY
+    ===================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        secretModal.classList.remove("active");
+
+        galleryModal.classList.remove("active");
+
+      }
+
+    });
+
+
+    /* =====================================
+       WISH BUTTON
+    ===================================== */
+
+    const wishButton =
+      document.getElementById("wishButton");
+
+    const cakeMessage =
+      document.getElementById("cakeMessage");
+
+
+    wishButton.addEventListener("click", () => {
+
+      cakeMessage.style.opacity = "1";
+
+      wishButton.textContent =
+        "Wish Made! 💖";
+
+      wishButton.disabled = true;
+
+      wishButton.style.opacity = "0.8";
+
+      createConfetti();
+
+    });
+
+
+    /* =====================================
+       CONFETTI / HEART BURST
+    ===================================== */
+
+    function createConfetti() {
+
+      const symbols = [
+        "💗",
+        "💕",
+        "✨",
+        "🌸",
+        "💖"
+      ];
+
+      for (let i = 0; i < 35; i++) {
+
+        const item =
+          document.createElement("div");
+
+        item.textContent =
+          symbols[
+            Math.floor(
+              Math.random() * symbols.length
+            )
+          ];
+
+        item.style.position = "fixed";
+
+        item.style.left = "50%";
+
+        item.style.top = "65%";
+
+        item.style.zIndex = "2000";
+
+        item.style.pointerEvents = "none";
+
+        item.style.fontSize =
+          (14 + Math.random() * 16) + "px";
+
+        document.body.appendChild(item);
+
+
+        const x =
+          (Math.random() - 0.5) * 700;
+
+        const y =
+          -200 - Math.random() * 500;
+
+
+        item.animate(
+          [
+            {
+              transform: "translate(-50%, -50%) scale(0)",
+              opacity: 1
+            },
+
+            {
+              transform:
+                `translate(${x}px, ${y}px) rotate(${Math.random() * 720}deg) scale(1)`,
+              opacity: 0
+            }
+          ],
+          {
+            duration: 1600 + Math.random() * 900,
+            easing: "cubic-bezier(.17,.67,.35,1)"
+          }
+        ).onfinish = () => {
+
+          item.remove();
+
+        };
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

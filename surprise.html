@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sofiya's Birthday Message ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Alegreya", serif;
+            color: #4a1830;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(255, 220, 190, 0.35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(255, 180, 200, 0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #5d1939,
+                    #9e3f61 50%,
+                    #d98d8a
+                );
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .birthday-shell {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            padding: 25px 18px 50px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            isolation: isolate;
+        }
+
+
+        /* =========================
+           DECORATIVE GLOW
+        ========================= */
+
+        .birthday-shell::before {
+            content: "";
+            position: fixed;
+
+            width: 350px;
+            height: 350px;
+
+            top: -120px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 225, 195, 0.25);
+
+            filter: blur(30px);
+
+            z-index: -1;
+        }
+
+        .birthday-shell::after {
+            content: "";
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            bottom: -120px;
+            left: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 100, 150, 0.2);
+
+            filter: blur(30px);
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart-field {
+            position: fixed;
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+
+            bottom: -60px;
+
+            opacity: 0;
+
+            animation: floatHeart linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 5%;
+            font-size: 22px;
+            animation-duration: 14s;
+            animation-delay: -3s;
+        }
+
+        .heart:nth-child(2) {
+            left: 17%;
+            font-size: 30px;
+            animation-duration: 18s;
+            animation-delay: -8s;
+        }
+
+        .heart:nth-child(3) {
+            left: 30%;
+            font-size: 18px;
+            animation-duration: 12s;
+            animation-delay: -5s;
+        }
+
+        .heart:nth-child(4) {
+            left: 45%;
+            font-size: 27px;
+            animation-duration: 17s;
+            animation-delay: -10s;
+        }
+
+        .heart:nth-child(5) {
+            left: 60%;
+            font-size: 20px;
+            animation-duration: 20s;
+            animation-delay: -7s;
+        }
+
+        .heart:nth-child(6) {
+            left: 72%;
+            font-size: 32px;
+            animation-duration: 16s;
+            animation-delay: -4s;
+        }
+
+        .heart:nth-child(7) {
+            left: 86%;
+            font-size: 19px;
+            animation-duration: 15s;
+            animation-delay: -9s;
+        }
+
+        .heart:nth-child(8) {
+            left: 94%;
+            font-size: 25px;
+            animation-duration: 13s;
+            animation-delay: -2s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.45;
+            }
+
+            80% {
+                opacity: 0.25;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh)
+                    translateX(35px)
+                    rotate(35deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           TOP BUTTON
+        ========================= */
+
+        .topbar {
+            width: 100%;
+            max-width: 850px;
+
+            margin-bottom: 20px;
+
+            animation: reveal 0.8s ease both;
+        }
+
+        .back-control {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 10px;
+
+            padding: 11px 18px;
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.14);
+
+            color: white;
+
+            font-family: "Alegreya", serif;
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 8px 25px rgba(50, 10, 30, 0.18);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .back-control:hover {
+            transform: translateX(-5px);
+
+            background: rgba(255,255,255,0.22);
+        }
+
+
+        /* =========================
+           LETTER
+        ========================= */
+
+        .letter-wrap {
+            width: 100%;
+            max-width: 850px;
+
+            animation: reveal 0.9s 0.1s ease both;
+        }
+
+        .letter-card {
+            position: relative;
+
+            padding: clamp(30px, 6vw, 65px);
+
+            border-radius: 28px;
+
+            border: 1px solid rgba(255,255,255,0.75);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffdf8,
+                    #fff3ec
+                );
+
+            box-shadow:
+                0 30px 80px rgba(45, 8, 28, 0.3);
+
+            overflow: hidden;
+        }
+
+        /* Paper shine */
+
+        .letter-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -80px;
+
+            border-radius: 50%;
+
+            background: rgba(230,106,131,0.08);
+        }
+
+
+        /* Corner heart */
+
+        .corner-heart {
+            position: absolute;
+
+            top: 22px;
+            right: 28px;
+
+            font-size: 25px;
+
+            opacity: 0.3;
+
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+
+        /* =========================
+           TEXT
+        ========================= */
+
+        .eyebrow {
+            text-align: center;
+
+            color: #b04c68;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+        }
+
+        .title {
+            margin-top: 12px;
+
+            text-align: center;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(32px, 6vw, 52px);
+
+            line-height: 1.15;
+
+            color: #5a1b38;
+
+            font-weight: 700;
+        }
+
+        .divider {
+            width: 130px;
+            height: 2px;
+
+            margin: 25px auto;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #d77a8b,
+                    transparent
+                );
+        }
+
+        .message-copy {
+            color: #57223a;
+
+            font-size: clamp(18px, 2.5vw, 21px);
+
+            line-height: 1.7;
+        }
+
+        .message-copy p {
+            margin-bottom: 22px;
+        }
+
+        .highlight {
+            color: #8d294c;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SIGNATURE
+        ========================= */
+
+        .signature {
+            margin-top: 35px;
+
+            text-align: right;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 21px;
+
+            font-style: italic;
+
+            color: #ad4e67;
+        }
+
+
+        /* =========================
+           BUTTON AREA
+        ========================= */
+
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .main-btn,
+        .btn {
+            min-width: 190px;
+
+            padding: 14px 25px;
+
+            border-radius: 50px;
+
+            border: none;
+
+            font-family: "Alegreya", serif;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        /* Surprise button */
+
+        .main-btn {
+            background: #fff;
+
+            color: #8d294c;
+
+            border: 1px solid #e5a0ae;
+
+            box-shadow:
+                0 8px 20px rgba(90, 27, 56, 0.12);
+        }
+
+        .main-btn::before {
+            content: "🎁  Surprise";
+        }
+
+        .main-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 28px rgba(90, 27, 56, 0.2);
+        }
+
+
+        /* Second button */
+
+        .btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #e94f70,
+                    #b92f58
+                );
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px rgba(110, 20, 55, 0.25);
+        }
+
+        .btn:hover {
+            transform:
+                translateY(-4px)
+                scale(1.03);
+
+            box-shadow:
+                0 13px 30px rgba(110, 20, 55, 0.35);
+        }
+
+
+        /* =========================
+           SURPRISE POPUP
+        ========================= */
+
+        .surprise {
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            background: rgba(45, 8, 28, 0.55);
+
+            backdrop-filter: blur(7px);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: 0.35s ease;
+
+            z-index: 100;
+        }
+
+        .surprise.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .surprise-box {
+            width: min(450px, 100%);
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            background: #fffaf5;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.3);
+
+            transform: scale(0.8);
+
+            transition: 0.35s ease;
+        }
+
+        .surprise.active .surprise-box {
+            transform: scale(1);
+        }
+
+        .surprise-box h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+
+            color: #701f43;
+
+            margin-bottom: 15px;
+        }
+
+        .surprise-box p {
+            font-size: 19px;
+
+            line-height: 1.6;
+
+            color: #673047;
+        }
+
+        .close-btn {
+            margin-top: 25px;
+
+            padding: 11px 25px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #b92f58;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes reveal {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .birthday-shell {
+                padding: 15px 12px 35px;
+            }
+
+            .topbar {
+                margin-bottom: 12px;
+            }
+
+            .letter-card {
+                padding: 30px 22px;
+
+                border-radius: 22px;
+            }
+
+            .message-copy {
+                font-size: 18px;
+
+                line-height: 1.65;
+            }
+
+            .signature {
+                font-size: 19px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .main-btn,
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+
+        /* Reduced motion */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="birthday-shell">
+
+        <!-- Floating Hearts -->
+
+        <div class="heart-field" aria-hidden="true">
+
+            <span class="heart">💗</span>
+            <span class="heart">💕</span>
+            <span class="heart">💖</span>
+            <span class="heart">💗</span>
+            <span class="heart">💞</span>
+            <span class="heart">💕</span>
+            <span class="heart">💖</span>
+            <span class="heart">💗</span>
+
+        </div>
+
+
+        <!-- Top Navigation -->
+
+        <header class="topbar">
+
+            <button
+                class="back-control"
+                onclick="goBack()">
+
+                ←
+
+                <span>
+                    Love You Soo Much Babuu
+                </span>
+
+            </button>
+
+        </header>
+
+
+        <!-- Birthday Letter -->
+
+        <main class="letter-wrap">
+
+            <article class="letter-card">
+
+                <div class="corner-heart">
+                    ♥
+                </div>
+
+
+                <p class="eyebrow">
+                    A Little Letter For The Birthday Girl
+                </p>
+
+
+                <h1 class="title">
+                    Meri Pyaari Sofiya
+                </h1>
+
+
+                <div class="divider"></div>
+
+
+                <section class="message-copy">
+
+                    <p>
+                        Begum sahiba, ye aapki life ka pehla birthday hai
+                        jisme main aur aap hum dono saath hain.
+                        Aur sach kahu babu, main is din ko aapke liye
+                        duniya ka sabse khaas din banana chahta hoon.
+                    </p>
+
+
+                    <p>
+                        Meri pyaari Sofiya, aapke aane se meri zindagi
+                        sach mein mukammal ho gayi hai.
+                        Aaj se pehle chahe jitne bhi birthdays aapne
+                        manaye hon, par ab se aane wala har saal,
+                        har cake aur har khoobsurat lamha aur bhi
+                        special hoga.
+                    </p>
+
+
+                    <p>
+                        Madam ji, aapki ek pyari si muskurahat ko dekhna
+                        ab meri sabse pyari aadat ban chuki hai.
+                        Aur meri dua hai ki ye muskurahat hamesha
+                        aise hi bani rahe.
+                    </p>
+
+
+                    <p>
+                        Ye humara saath mein pehla birthday zaroor hai,
+                        meri wifey, par meri dua hai ki aane wale
+                        har birthday par hum isi tarah ek doosre ka
+                        saath celebrate karein.
+                        Aap meri zindagi ka sabse khoobsurat hissa ho
+                        aur hamesha rahogi.
+                    </p>
+
+
+                    <p class="highlight">
+                        Happy Birthday meri jaan ❤️
+                        Aaj ka din sirf aapka hai.
+                    </p>
+
+                </section>
+
+
+                <p class="signature">
+                    With all my love, always ♥
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="buttons">
+
+                    <button
+                        class="main-btn"
+                        onclick="showSurprise()">
+                    </button>
+
+
+                    <a
+                        href="another.html"
+                        class="btn">
+
+                        Click Here ❤️
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </main>
+
+    </div>
+
+
+    <!-- Surprise Popup -->
+
+    <div
+        class="surprise"
+        id="surprise">
+
+        <div class="surprise-box">
+
+            <h2>
+                🎉 Surprise!
+            </h2>
+
+            <p>
+                Wishing Sofiya a beautiful birthday filled with
+                happiness, smiles, wonderful memories and lots of
+                beautiful moments. ❤️
+            </p>
+
+            <button
+                class="close-btn"
+                onclick="closeSurprise()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           SURPRISE
+        ========================= */
+
+        function showSurprise() {
+
+            document
+                .getElementById("surprise")
+                .classList.add("active");
+
+        }
+
+
+        function closeSurprise() {
+
+            document
+                .getElementById("surprise")
+                .classList.remove("active");
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        function goBack() {
+
+            if (window.history.length > 1) {
+
+                window.history.back();
+
+            } else {
+
+                window.location.href = "index.html";
+
+            }
+
+        }
+
+
+        /* Close popup when clicking outside */
+
+        document
+            .getElementById("surprise")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    closeSurprise();
+
+                }
+
+            });
+
+
+        /* ESC key */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                closeSurprise();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+

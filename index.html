@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Sofiya ❤️</title>
+
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #5b2942;
+            background: #fff5f8;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            --berry: #a52f62;
+            --berry-dark: #84234d;
+            --rose: #d9467a;
+            --text: #5b2942;
+            --soft-pink: #fff6fa;
+            --focus-ring: #6c1c40;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(ellipse at top, #ffd9e8 0, #fff5f8 48%, #f6d7e8 100%);
+        }
+
+        .page {
+            display: flex;
+            min-height: 100vh;
+            min-height: 100svh;
+            align-items: center;
+            justify-content: center;
+            padding: max(30px, env(safe-area-inset-top)) max(15px, env(safe-area-inset-right)) max(30px, env(safe-area-inset-bottom)) max(15px, env(safe-area-inset-left));
+        }
+
+        .card {
+            width: min(100%, 850px);
+            padding: clamp(32px, 6vw, 55px) clamp(20px, 5vw, 35px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 20px 60px rgba(100, 35, 65, 0.18);
+            text-align: center;
+            animation: card-appear 700ms ease both;
+        }
+
+        @supports (backdrop-filter: blur(1px)) {
+            .card {
+                background: rgba(255, 255, 255, 0.72);
+                backdrop-filter: blur(12px);
+            }
+        }
+
+        @keyframes card-appear {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            max-width: 100%;
+            padding: 9px 20px;
+            border-radius: 999px;
+            background: #fff0f6;
+            color: #8b3d5d;
+            font-family: Arial, sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .heart {
+            margin-top: 18px;
+            color: #ff416c;
+            font-size: clamp(44px, 10vw, 55px);
+            line-height: 1.2;
+            animation: float-heart 2s ease-in-out infinite;
+        }
+
+        @keyframes float-heart {
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        h1 {
+            margin: 18px 0 8px;
+            color: var(--berry);
+            font-size: clamp(2.5rem, 8vw, 5.125rem);
+            line-height: 1.05;
+            overflow-wrap: anywhere;
+            text-shadow: 0 5px 15px rgba(165, 47, 98, 0.12);
+        }
+
+        h2 {
+            margin: 12px 0 22px;
+            font-size: clamp(1.25rem, 4vw, 1.75rem);
+            line-height: 1.3;
+        }
+
+        p {
+            max-width: 650px;
+            margin: 15px auto;
+            font-family: Arial, sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button,
+        .btn {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 24px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button:focus-visible,
+        .btn:focus-visible {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 4px;
+        }
+
+        .main-btn {
+            color: #fff;
+            background: linear-gradient(135deg, var(--berry), var(--rose));
+            box-shadow: 0 8px 20px rgba(165, 47, 98, 0.25);
+        }
+
+        .alt {
+            border-color: #f0b4ca;
+            color: var(--berry);
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(165, 47, 98, 0.08);
+        }
+
+        .btn {
+            color: #fff;
+            background: linear-gradient(135deg, #ff4b6e, #ff1744);
+            box-shadow: 0 8px 20px rgba(255, 23, 68, 0.3);
+        }
+
+        .surprise {
+            margin-top: 30px;
+            padding: clamp(20px, 5vw, 28px);
+            border: 1px solid rgba(165, 47, 98, 0.1);
+            border-radius: 22px;
+            background: var(--soft-pink);
+            animation: fade-in 450ms ease both;
+        }
+
+        .surprise h2,
+        .special {
+            color: var(--berry);
+        }
+
+        .special {
+            font-weight: 700;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .main-btn:hover,
+            .alt:hover,
+            .btn:hover {
+                transform: translateY(-3px);
+            }
+
+            .main-btn:hover {
+                box-shadow: 0 12px 28px rgba(165, 47, 98, 0.35);
+            }
+
+            .alt:hover {
+                background: #fff5f8;
+                box-shadow: 0 10px 22px rgba(165, 47, 98, 0.18);
+            }
+
+            .btn:hover {
+                background: linear-gradient(135deg, #ff1744, #d50000);
+                box-shadow: 0 12px 28px rgba(255, 23, 68, 0.4);
+            }
+        }
+
+        button:active,
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                align-items: flex-start;
+                padding: max(20px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+            }
+
+            .card {
+                border-radius: 24px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            button,
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="page">
+
+        <div class="card">
+
+            <div class="badge">
+                A Little Birthday Surprise
+            </div>
+
+            <div class="heart">
+                ♥
+            </div>
+
+            <h1>
+                Happy Birthday,<br>
+                Begum Sahiba!
+            </h1>
+
+            <h2>
+                To my favourite girl in the entire world ✨
+            </h2>
+
+            <p>
+                Today is all about celebrating you —
+                your smile, your kindness, your beautiful energy,
+                and all the little things that make you so special.
+            </p>
+
+
+            <!-- THREE BUTTONS -->
+
+            <div class="buttons">
+
+                <button
+                    class="main-btn"
+                    onclick="showSurprise()">
+                    Open Your Surprise 🎁
+                </button>
+
+                <button
+                    class="alt"
+                    onclick="showMessage()">
+                    Read My Message 💌
+                </button>
+
+                <a
+                    href="surprise.html"
+                    class="btn">
+                    Click Here ❤️
+                </a>
+
+            </div>
+
+
+            <!-- SURPRISE -->
+
+            <div
+                id="surprise"
+                class="surprise hidden">
+
+                <h2>
+                    ✨ One More Little Surprise ✨
+                </h2>
+
+                <p>
+                    May your birthday be filled with happiness,
+                    laughter, unforgettable moments and everything
+                    your heart wishes for.
+                </p>
+
+                <p class="special">
+                    Keep shining, Sofiya Faraz.
+                    You deserve a beautiful day. ❤️
+                </p>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="surprise hidden">
+
+                <h2>
+                    For Begum Sahiba 💗
+                </h2>
+
+                <p>
+                    You are one of those people who can make
+                    an ordinary day feel special just by being there.
+                    I hope this new year of your life brings you
+                    countless reasons to smile.
+                </p>
+
+                <p>
+                    Happy Birthday, Sofiya Faraz.
+                    Never forget how wonderfully special you are. 🌷
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function showSurprise() {
+
+            document
+                .getElementById("surprise")
+                .classList
+                .remove("hidden");
+
+            document
+                .getElementById("message")
+                .classList
+                .add("hidden");
+        }
+
+
+        function showMessage() {
+
+            document
+                .getElementById("message")
+                .classList
+                .remove("hidden");
+
+            document
+                .getElementById("surprise")
+                .classList
+                .add("hidden");
+        }
+
+    </script>
+
+</body>
+</html>
+
